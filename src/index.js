@@ -96,7 +96,9 @@ function handleClick(event) {
   } else {
     subMenuEl.style.top = '0';
   }
-
+  if (event.target.textContent.trim().toLowerCase() === 'about'){
+    mainEl.querySelector('h1').textContent= 'About';
+  }
   
 }
 
@@ -122,11 +124,8 @@ function handleSubmenuClick(event){
   subMenuEl.style.top = '0';
   topMenuLinks.forEach(link => link.classList.remove('active'));
 
-  if (event.target.textContent.toLowerCase() === 'about'){
-    mainEl.querySelector('h1').textContent= 'About';
-  }else {
     mainEl.querySelector('h1').textContent = event.target.textContent;
-  }
+  
 
 }
 
